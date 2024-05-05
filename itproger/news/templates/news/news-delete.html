@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Deleting a topic {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <h1>Form for adding a New topic</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Delete a topic</button>
+        </form>
+    </div>
+{% endblock %}

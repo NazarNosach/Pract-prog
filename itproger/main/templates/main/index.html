@@ -4,8 +4,14 @@
 
 {% block content%}
 <div class="features">
-    <h1>{{ title }}</h1>
-    <p>Genious frase that we haven`t came up with)</p>
-    <button class="btn btn-warning" >On about us page</button>
+    <h1>Movies streaming</h1>
+    <p>List of movie sessions</p>
+    {% for el in movies %}
+        <div class="alert alert-warning">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.director }}</p>
+            <p>{{ el.release_date }}</p>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

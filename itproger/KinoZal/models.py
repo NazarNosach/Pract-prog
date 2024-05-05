@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     director = models.CharField(max_length=255)
@@ -15,7 +13,7 @@ class Booking(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user_id = models.IntegerField()
     seats = models.IntegerField()
-    booking_date = models.DateTimeField()
+    booking_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Booking for {self.movie.title} by User {self.user_id}"

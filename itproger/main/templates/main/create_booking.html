@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Form for adding a New booking {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <h1>Form for adding a New booking</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.movie }}<br>
+            {{ form.user_id }}<br>
+            {{ form.seats }}<br>
+            {{ form.booking_date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Add booking</button>
+        </form>
+    </div>
+{% endblock %}
